@@ -14,7 +14,7 @@
 <script>
 async function submitTicket(){
   const data = {name: document.getElementById('name').value, email: document.getElementById('email').value, issue: document.getElementById('issue').value, priority: document.getElementById('priority').value};
-  const res = await fetch('REPLACE_WITH_API_GATEWAY_URL', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
+  const res = await fetch('https://2rkotetuk5.execute-api.us-east-1.amazonaws.com/prod', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
   const out = await res.json();
   document.getElementById('result').innerText = 'Ticket Created! ID: ' + out.ticketId;
 }
